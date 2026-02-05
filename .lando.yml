@@ -1,0 +1,19 @@
+name: hakaton
+recipe: pantheon
+config:
+  site: hakaton
+  id: 59931b5c-b0fa-45bd-bba7-698d8889c3c4
+  webroot: ./web
+services:
+  appserver:
+    xdebug: true
+    overrides:
+      environment:
+        XDEBUG_MODE: debug
+        XDEBUG_CONFIG: "client_host=host.docker.internal client_port=9003 start_with_request=yes"
+        PHP_IDE_CONFIG: "serverName=lando"
+        XDEBUG_SESSION: VSCODE
+  appserver_nginx:
+    overrides:
+      mounts: 
+        - ./config/default.conf:/opt/bitnami/nginx/conf/vhosts
