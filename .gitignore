@@ -95,3 +95,16 @@
 
 # Ignore .env files as they are personal
 #/.env
+/.env.lando
+/.lando.local.yml
+/AGENTS.md
+/.agents/
+
+# Local database dumps
+*.sql
+*.sql.gz
+*.sql.zip
+*.sql.bz2
+*.sql.xz
+*.dump
+*.dump.gz
